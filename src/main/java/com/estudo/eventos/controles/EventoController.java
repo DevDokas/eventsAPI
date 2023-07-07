@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin
+
 @RestController
 @RequestMapping("/evento")
 @RequiredArgsConstructor
@@ -18,12 +18,13 @@ public class EventoController {
 
     private final EventoService service;
 
-    @GetMapping
+    @CrossOrigin
+    @RequestMapping(method = RequestMethod.GET, path = "")
     public ResponseEntity<List<Evento>> getData() {
         return ResponseEntity.ok(service.getData());
     }
 
-    @GetMapping(value = "/{id}")
+    @RequestMapping(method = RequestMethod.GET, path = "/{id}")
     public ResponseEntity<Optional<Evento>> getDataById(@PathVariable Long id) {
         return ResponseEntity.ok(service.getDataById(id));
     }
