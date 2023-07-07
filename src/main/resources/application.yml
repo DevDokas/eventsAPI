@@ -3,10 +3,11 @@ spring:
     url: jdbc:mysql://localhost:3306/eventos?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
     username: root
     password: CRbygAtdWGPsFuQZ6HyvFxwkkSxRPe
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
     show-sql: true
     hibernate:
-      dll-auto: update
+      dll-auto: create
     properties:
       '[hibernate.format_sql]': true
