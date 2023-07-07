@@ -29,19 +29,19 @@ public class EventoController {
         return ResponseEntity.ok(service.getDataById(id));
     }
 
-    @PostMapping
+    @RequestMapping(method = RequestMethod.POST, path = "")
     public ResponseEntity<?> postData(@RequestBody Evento evento) {
         service.postData(evento);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @PutMapping
+    @RequestMapping(method = RequestMethod.PUT, path = "")
     public ResponseEntity<?> putData(@RequestBody Evento evento) {
             service.putData(evento);
             return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @DeleteMapping(value = "/{id}")
+    @RequestMapping(method = RequestMethod.DELETE, path = "/{id}")
     public ResponseEntity<?> deleteData(@PathVariable Long id) {
         service.deleteData(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
