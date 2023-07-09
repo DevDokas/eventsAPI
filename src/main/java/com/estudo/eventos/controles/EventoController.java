@@ -35,9 +35,9 @@ public class EventoController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, path = "")
-    public ResponseEntity<?> putData(@RequestBody Evento evento) {
-            service.putData(evento);
+    @RequestMapping(method = RequestMethod.PUT, path = "/{id}")
+    public ResponseEntity<?> putData(@PathVariable Long id,@RequestBody Evento evento) {
+            service.putData(id, evento);
             return new ResponseEntity<>(HttpStatus.CREATED);
     }
 

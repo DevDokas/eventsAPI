@@ -14,6 +14,10 @@ import java.util.Optional;
 public class EventoService {
     private final RepositorioEvento repository;
 
+    public boolean existById (Long id) {
+        return repository.existsById(id);
+    }
+
     public List<Evento> getData() {
         return repository.findAll();
     }
@@ -26,12 +30,11 @@ public class EventoService {
         repository.save(evento);
     }
 
-    public void putData(Evento evento) {
+    public void putData(Long id,Evento evento) {
+        if (existById(id)) {
+            evento.setId(id);
             repository.save(evento);
-    }
-
-    public boolean existById (Long id) {
-        return repository.existsById(id);
+        }
     }
 
     public void deleteData(Long id) {
