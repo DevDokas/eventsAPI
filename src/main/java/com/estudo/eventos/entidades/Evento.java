@@ -17,6 +17,8 @@ public class Evento {
     private String imagem;
     private String criado_em;
 
+    private String atualizado_em;
+
     // Getters
     public Long getId() {
         return id;
@@ -39,6 +41,8 @@ public class Evento {
     public String getCriado_em() {
         return criado_em;
     }
+
+    public String getAtualizado_em() { return atualizado_em;}
 
     // Setters
 
@@ -63,4 +67,6 @@ public class Evento {
     public void setCriado_em(String criado_em) {
         this.criado_em = criado_em;
     }
+
+    public void setAtualizado_em(String atualizado_em) { this.atualizado_em = atualizado_em;}
 }
