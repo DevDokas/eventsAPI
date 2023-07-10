@@ -10,6 +10,9 @@ public class Evento {
     private Long id;
     @Column(nullable = false)
     private String nome;
+
+    @Column(nullable = false)
+    private String categoria;
     private String descricao;
     private String imagem;
     private String criado_em;
@@ -22,6 +25,8 @@ public class Evento {
     public String getNome() {
         return nome;
     }
+
+    public String getCategoria() { return categoria;}
 
     public String getDescricao() {
         return descricao;
@@ -44,6 +49,8 @@ public class Evento {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    public void SetCategoria(String categoria) { this.categoria = categoria;}
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
