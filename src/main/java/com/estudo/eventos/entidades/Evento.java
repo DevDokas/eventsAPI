@@ -10,13 +10,11 @@ public class Evento {
     private Long id;
     @Column(nullable = false)
     private String nome;
-
     @Column(nullable = false)
     private String categoria;
     private String descricao;
     private String imagem;
     private String criado_em;
-
     private String atualizado_em;
 
     // Getters
