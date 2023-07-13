@@ -22,8 +22,12 @@ public class EventoService {
         return repository.findAll();
     }
 
-    public Optional<Evento> getDataById(@RequestParam Long id) {
+    public Optional<Evento> getDataById(Long id) {
         return repository.findById(id);
+    }
+
+    public List<Evento> getDataByCategoryId(Long id) {
+        return repository.findByCategoria_Id(id);
     }
 
     public void postData(Evento evento) {

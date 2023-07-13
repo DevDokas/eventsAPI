@@ -1,5 +1,6 @@
 package com.estudo.eventos.controles;
 
+import com.estudo.eventos.dto.CategoriaEventoDTO;
 import com.estudo.eventos.entidades.Categoria;
 import com.estudo.eventos.servicos.CategoriaService;
 import lombok.RequiredArgsConstructor;
@@ -24,6 +25,11 @@ public class CategoriaController {
     @RequestMapping(method = RequestMethod.GET, path = "/{id}")
     public ResponseEntity<Optional<Categoria>> getDataById(@PathVariable Long id) {
         return ResponseEntity.ok(service.getDataById(id));
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/eventos")
+    public ResponseEntity<List<CategoriaEventoDTO>> getDataEventCategory() {
+        return ResponseEntity.ok(service.getDataEventsCategory());
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "")
